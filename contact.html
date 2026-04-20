@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ - 東京V界隈</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@400;600;700;800;900&display=block" rel="stylesheet">
+  <style>
+    .contact-section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+    }
+
+    .contact-card {
+      background: rgba(15, 15, 30, 0.7);
+      border: 1px solid rgba(125, 232, 255, 0.15);
+      border-radius: 16px;
+      padding: 40px 36px;
+    }
+
+    .contact-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8px;
+      text-shadow: 0 0 12px rgba(125, 232, 255, 0.3);
+    }
+
+    .contact-subtitle {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group label .required {
+      color: #ff44aa;
+      margin-left: 4px;
+      font-size: 11px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(125, 232, 255, 0.2);
+      border-radius: 8px;
+      color: #e0e0e8;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(125, 232, 255, 0.5);
+      box-shadow: 0 0 12px rgba(125, 232, 255, 0.15);
+    }
+
+    .form-group textarea {
+      height: 140px;
+      resize: vertical;
+    }
+
+    .form-group select {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #1a1a2e;
+      color: #e0e0e8;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, rgba(255, 68, 170, 0.3), rgba(204, 68, 255, 0.3));
+      border: 1px solid rgba(255, 68, 170, 0.4);
+      border-radius: 40px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.3s;
+      margin-top: 28px;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, rgba(255, 68, 170, 0.5), rgba(204, 68, 255, 0.5));
+      box-shadow: 0 0 20px rgba(255, 68, 170, 0.3);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .back-link a {
+      color: rgba(125, 232, 255, 0.7);
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .back-link a:hover {
+      color: #7de8ff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== グローバルナビ ===== -->
+  <header class="global-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="東京V界隈" class="logo-img">
+      </a>
+      <nav class="global-nav">
+        <ul>
+          <li><a href="index.html#top">TOP</a></li>
+          <li><a href="guidelines.html">GUIDELINES</a></li>
+          <li class="nav-special"><a href="https://tokyovkaiwai.booth.pm/" target="_blank" rel="noopener noreferrer">GOODS</a></li>
+          <li class="nav-special"><a href="contact.html" class="nav-active">CONTACT</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header-line"></div>
+  </header>
+
+  <!-- ===== お問い合わせフォーム ===== -->
+  <section class="contact-section">
+    <div class="contact-card">
+      <h1 class="contact-title">CONTACT</h1>
+      <p class="contact-subtitle">お問い合わせは下記フォームよりお願いいたします。</p>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label>お名前<span class="required">*</span></label>
+          <input type="text" name="name" required placeholder="山田 太郎">
+        </div>
+        <div class="form-group">
+          <label>メールアドレス<span class="required">*</span></label>
+          <input type="email" name="email" required placeholder="example@mail.com">
+        </div>
+        <div class="form-group">
+          <label>お問い合わせ種別</label>
+          <select name="category">
+            <option value="">選択してください</option>
+            <option value="general">一般的なお問い合わせ</option>
+            <option value="collab">コラボ・出演依頼</option>
+            <option value="business">ビジネスに関するお問い合わせ</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>お問い合わせ内容<span class="required">*</span></label>
+          <textarea name="message" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">送信する</button>
+      </form>
+
+      <div class="back-link">
+        <a href="index.html">&lt; トップページに戻る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer class="global-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="https://x.com/tokyovkaiwai" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X">
+          <img src="images/icon-x.png" alt="X" class="social-icon-img">
+        </a>
+        <a href="https://www.youtube.com/channel/UCpaPLm_RPjs5ALJmFA0-iug" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+          <img src="images/icon-youtube.png" alt="YouTube" class="social-icon-img">
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Tokyo V-kaiwai</p>
+    </div>
+  </footer>
+
+  <script>
+    // ハンバーガーメニュー
+    const navToggle = document.getElementById('navToggle');
+    const globalNav = document.querySelector('.global-nav');
+    navToggle.addEventListener('click', () => {
+      globalNav.classList.toggle('open');
+    });
+    document.querySelectorAll('.global-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        globalNav.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
