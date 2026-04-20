@@ -68,7 +68,6 @@ img {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
-  overflow: hidden;
 }
 
 .header-inner {
