@@ -130,6 +130,26 @@
     .back-link a:hover {
       color: #7de8ff;
     }
+
+    .sent-message {
+      text-align: center;
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      background: rgba(68, 255, 170, 0.1);
+      border: 1px solid rgba(68, 255, 170, 0.4);
+      border-radius: 12px;
+      color: #44ffaa;
+      font-size: 15px;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(68, 255, 170, 0.3);
+    }
+
+    .sent-message p {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 8px;
+    }
   </style>
 </head>
 <body>
@@ -161,10 +181,15 @@
       <h1 class="contact-title">CONTACT</h1>
       <p class="contact-subtitle">お問い合わせは下記フォームよりお願いいたします。</p>
 
+      <div class="sent-message" id="sentMessage" style="display:none;">
+        送信が完了しました！
+        <p>お問い合わせいただきありがとうございます。<br>内容を確認の上、ご連絡いたします。</p>
+      </div>
+
       <form action="https://formsubmit.co/tokyovkaiwai.official@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="【東京V界隈】お問い合わせ">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tokyovkaiwaiofficial.github.io/tokyo-v-kaiwai/contact.html">
+        <input type="hidden" name="_next" value="https://tokyovkaiwaiofficial.github.io/tokyo-v-kaiwai/contact.html?sent=true">
         <input type="text" name="_honey" style="display:none">
         <div class="form-group">
           <label>お名前<span class="required">*</span></label>
@@ -213,6 +238,11 @@
   </footer>
 
   <script>
+    // 送信完了メッセージ表示
+    if (new URLSearchParams(window.location.search).has('sent')) {
+      document.getElementById('sentMessage').style.display = 'block';
+    }
+
     // ハンバーガーメニュー
     const navToggle = document.getElementById('navToggle');
     const globalNav = document.querySelector('.global-nav');
