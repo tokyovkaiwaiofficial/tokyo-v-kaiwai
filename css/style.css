@@ -678,13 +678,13 @@ img {
 @media (max-width: 768px) {
   .global-nav {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 56px;
     left: 0;
     width: 100%;
     background: rgba(10, 10, 20, 0.97);
     border-bottom: 2px solid rgba(125, 232, 255, 0.3);
-    z-index: 999;
+    z-index: 9999;
   }
 
   .global-nav.open {
