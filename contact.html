@@ -131,6 +131,45 @@
       color: #7de8ff;
     }
 
+    .confirm-check {
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(125, 232, 255, 0.15);
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    .checkbox-label:hover {
+      border-color: rgba(125, 232, 255, 0.4);
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #44ffaa;
+      cursor: pointer;
+    }
+
+    .checkbox-text {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.03em;
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
     .sent-message {
       text-align: center;
       padding: 24px 20px;
@@ -188,7 +227,7 @@
 
       <form action="https://formsubmit.co/tokyovkaiwai.official@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="【東京V界隈】お問い合わせ">
-        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="https://tokyovkaiwaiofficial.github.io/tokyo-v-kaiwai/contact.html?sent=true">
         <input type="text" name="_honey" style="display:none">
@@ -214,7 +253,13 @@
           <label>お問い合わせ内容<span class="required">*</span></label>
           <textarea name="message" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
         </div>
-        <button type="submit" class="btn-submit">送信する</button>
+        <div class="form-group confirm-check">
+          <label class="checkbox-label">
+            <input type="checkbox" id="notRobot" required>
+            <span class="checkbox-text">私はロボットではありません</span>
+          </label>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" disabled>送信する</button>
       </form>
 
       <div class="back-link">
@@ -239,6 +284,11 @@
   </footer>
 
   <script>
+    // チェックボックスで送信ボタン有効化
+    document.getElementById('notRobot').addEventListener('change', function() {
+      document.getElementById('submitBtn').disabled = !this.checked;
+    });
+
     // 送信完了メッセージ表示
     if (new URLSearchParams(window.location.search).has('sent')) {
       document.getElementById('sentMessage').style.display = 'block';
