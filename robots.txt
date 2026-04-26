@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tokyovkaiwaiofficial.github.io/tokyo-v-kaiwai/sitemap.xml
