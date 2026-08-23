@@ -974,3 +974,4 @@ img {
 .member-card.anim-visible:nth-child(3) { transition-delay: 0.1s; }
 .member-card.anim-visible:nth-child(4) { transition-delay: 0.2s; }
 .member-card.anim-visible:nth-child(5) { transition-delay: 0.3s; }
+.member-card.anim-visible:nth-child(6) { transition-delay: 0.4s; }
