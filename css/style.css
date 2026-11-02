@@ -941,6 +941,16 @@ img {
   background: rgba(255, 68, 170, 0.5);
 }
 
+.guidelines-link {
+  color: #7de8ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.guidelines-link:hover {
+  text-shadow: 0 0 8px rgba(125, 232, 255, 0.5);
+}
+
 .guidelines-note {
   font-size: 11px;
   color: rgba(255, 255, 255, 0.45);
