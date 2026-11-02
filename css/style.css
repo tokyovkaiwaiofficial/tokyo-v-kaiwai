@@ -943,12 +943,28 @@ img {
 
 .guidelines-link {
   color: #7de8ff;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-shadow: 0 0 8px rgba(125, 232, 255, 0.4);
+}
+
+.guidelines-link::after {
+  content: " ↗";
+  font-size: 0.85em;
 }
 
 .guidelines-link:hover {
-  text-shadow: 0 0 8px rgba(125, 232, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(125, 232, 255, 0.7);
+}
+
+.guidelines-link-row {
+  margin: 8px 0 20px;
+}
+
+.guidelines-gap {
+  margin-top: 12px;
 }
 
 .guidelines-note {
