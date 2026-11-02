@@ -967,6 +967,13 @@ img {
   margin-top: 12px;
 }
 
+.guidelines-subhead {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 12px;
+}
+
 .guidelines-note {
   font-size: 11px;
   color: rgba(255, 255, 255, 0.45);
